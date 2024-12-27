@@ -9,5 +9,5 @@ readme.workspace = true
 repository.workspace = true
 
 [dependencies]
-type-sig-proc-macro = { path = "../type-sig-proc-macro" }
-type-sig-type = { path = "../type-sig-type" }
+type-sig-proc-macro = "0.1.0"
+type-sig-type = "0.1.0"

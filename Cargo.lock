@@ -36,7 +36,7 @@ name = "type-sig"
 version = "0.1.0"
 dependencies = [
  "type-sig-proc-macro",
- "type-sig-type",
+ "type-sig-type 0.1.0",
 ]
 
 [[package]]
@@ -46,12 +46,18 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn",
- "type-sig-type",
+ "type-sig-type 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "type-sig-type"
 version = "0.1.0"
+
+[[package]]
+name = "type-sig-type"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a8fcbf2231c9900bc99679496cb2a1b71ebac6fb6b65ed923388c22d4373d3ff"
 
 [[package]]
 name = "unicode-ident"
