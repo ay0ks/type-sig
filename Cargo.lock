@@ -35,13 +35,25 @@ dependencies = [
 name = "type-sig"
 version = "0.1.0"
 dependencies = [
- "type-sig-proc-macro",
- "type-sig-type 0.1.0",
+ "type-sig-proc-macro 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "type-sig-type 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "type-sig-proc-macro"
 version = "0.1.0"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+ "type-sig-type 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "type-sig-proc-macro"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f7707bb0ec33df1ea915087faceb62048d97603189ae8fe15023e67a0498bddb"
 dependencies = [
  "proc-macro2",
  "quote",
