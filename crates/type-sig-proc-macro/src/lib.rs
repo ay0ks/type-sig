@@ -19,18 +19,10 @@ use syn::{
   TypeTuple,
 };
 
-// type_sig format:
-//
-// NAME
-// FLAGS...
-// TYPE_ID
-// ADDITIONAL_TYPE_IDS...
-
 #[proc_macro]
 pub fn type_sig(input: TokenStream) -> TokenStream {
   extern crate self as type_sig_proc_macro;
   let input_ = input.clone();
-  let input__ = input_.clone();
   let input_: Type = syn::parse_macro_input!(input_);
   let ty_name = quote! { unsafe { std::any::type_name::<#input_>() } };
   let ty_id = quote! { unsafe { std::any::TypeId::of::<#input_>() } };
