@@ -1,5 +1,6 @@
 [package]
 name = "type-sig-type"
+description = "type-sig: Internal crate that defines the TypeSignature structure, don't use this directly."
 version.workspace = true
 edition.workspace = true
 authors.workspace = true

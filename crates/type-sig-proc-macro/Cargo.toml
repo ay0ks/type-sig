@@ -1,5 +1,6 @@
 [package]
 name = "type-sig-proc-macro"
+description = "type-sig: Internal crate that defines the procedural macro, don't use this directly."
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
