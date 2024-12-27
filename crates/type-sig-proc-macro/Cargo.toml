@@ -5,6 +5,8 @@ version.workspace = true
 edition.workspace = true
 authors.workspace = true
 license-file.workspace = true
+readme.workspace = true
+repository.workspace = true
 
 [dependencies]
 type-sig-type = { path = "../type-sig-type" }
