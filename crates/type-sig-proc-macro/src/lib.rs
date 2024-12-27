@@ -28,7 +28,9 @@ use syn::{
 
 #[proc_macro]
 pub fn type_sig(input: TokenStream) -> TokenStream {
+  extern crate self as type_sig_proc_macro;
   let input_ = input.clone();
+  let input__ = input_.clone();
   let input_: Type = syn::parse_macro_input!(input_);
   let ty_name = quote! { unsafe { std::any::type_name::<#input_>() } };
   let ty_id = quote! { unsafe { std::any::TypeId::of::<#input_>() } };
@@ -42,6 +44,7 @@ pub fn type_sig(input: TokenStream) -> TokenStream {
     mut is_macro,
     mut is_never,
     mut is_paren,
+    mut is_group,
     mut is_path,
     mut is_array,
     mut is_slice,
@@ -57,7 +60,7 @@ pub fn type_sig(input: TokenStream) -> TokenStream {
     false, false, false, 
     false, false, false,
     false, false, false,
-    false, false,
+    false, false, false,
     None as Option<Expr>,
   );
   let mut ty_lts: Vec<String> = Vec::new();
@@ -91,14 +94,6 @@ pub fn type_sig(input: TokenStream) -> TokenStream {
       let ty_child: Expr = syn::parse_macro_input!(ty_child);
       ty_children.push(ty_child);
     }
-    Type::Group(TypeGroup {
-      elem: ref ty,
-      ..
-    }) => {
-      let ty_child = type_sig(ty.into_token_stream().into());
-      let ty_child: Expr = syn::parse_macro_input!(ty_child);
-      ty_children.push(ty_child);
-    }
     Type::ImplTrait(_) => {
       is_impl_trait = true;
     }
@@ -110,6 +105,15 @@ pub fn type_sig(input: TokenStream) -> TokenStream {
     }
     Type::Never(_) => {
       is_never = true;
+    }
+    Type::Group(TypeGroup {
+      elem: ref ty,
+      ..
+    }) => {
+      is_group = true;
+      let ty_child = type_sig(ty.into_token_stream().into());
+      let ty_child: Expr = syn::parse_macro_input!(ty_child);
+      ty_children.push(ty_child);
     }
     Type::Paren(TypeParen {
       elem: ref ty,
@@ -191,7 +195,7 @@ pub fn type_sig(input: TokenStream) -> TokenStream {
   };
 
   quote! {
-    TypeSignature {
+    ::type_sig_type::TypeSignature {
       name: (#ty_name).to_string(),
       id: #ty_id,
       is_const: #is_const,
@@ -204,6 +208,7 @@ pub fn type_sig(input: TokenStream) -> TokenStream {
       is_never: #is_never,
       is_paren: #is_paren,
       is_path: #is_path,
+      is_group: #is_group,
       is_tuple: #is_tuple,
       is_array: #is_array,
       is_slice: #is_slice,

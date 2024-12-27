@@ -13,6 +13,7 @@ pub struct TypeSignature {
   pub is_macro: bool,
   pub is_never: bool,
   pub is_paren: bool,
+  pub is_group: bool,
   pub is_path: bool,
   pub is_tuple: bool,
   pub is_array: bool,

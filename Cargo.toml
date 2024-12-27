@@ -7,8 +7,7 @@ members = [
 ]
 
 [workspace.package]
-name = "type-sig"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 authors = ["Dimitriy \"ay0ks\" <ay0o0ks000@gmail.com>"]
 license-file = "LICENSE"

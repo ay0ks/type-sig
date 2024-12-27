@@ -33,43 +33,25 @@ dependencies = [
 
 [[package]]
 name = "type-sig"
-version = "0.1.0"
+version = "0.1.2"
 dependencies = [
- "type-sig-proc-macro 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
- "type-sig-type 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "type-sig-proc-macro",
+ "type-sig-type",
 ]
 
 [[package]]
 name = "type-sig-proc-macro"
-version = "0.1.0"
+version = "0.1.2"
 dependencies = [
  "proc-macro2",
  "quote",
  "syn",
- "type-sig-type 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
-]
-
-[[package]]
-name = "type-sig-proc-macro"
-version = "0.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "f7707bb0ec33df1ea915087faceb62048d97603189ae8fe15023e67a0498bddb"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn",
- "type-sig-type 0.1.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "type-sig-type",
 ]
 
 [[package]]
 name = "type-sig-type"
-version = "0.1.0"
-
-[[package]]
-name = "type-sig-type"
-version = "0.1.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a8fcbf2231c9900bc99679496cb2a1b71ebac6fb6b65ed923388c22d4373d3ff"
+version = "0.1.2"
 
 [[package]]
 name = "unicode-ident"
