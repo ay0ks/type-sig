@@ -191,7 +191,7 @@ pub fn type_sig(input: TokenStream) -> TokenStream {
   };
 
   quote! {
-    ::type_sig_type::TypeSignature {
+    TypeSignature {
       name: (#ty_name).to_string(),
       id: #ty_id,
       is_const: #is_const,

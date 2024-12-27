@@ -1,6 +1,6 @@
 use std::any::TypeId;
 
-#[derive(Clone, Debug)]
+#[derive(Clone, Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub struct TypeSignature {
   pub name: String,
   pub id: TypeId,
