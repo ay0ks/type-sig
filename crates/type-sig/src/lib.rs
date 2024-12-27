@@ -9,7 +9,7 @@ pub fn type_sig<T: 'static>() -> TypeSignature {
 mod tests {
   use type_sig_type::TypeSignature;
 
-use super::type_sig;
+  use super::type_sig;
 
   #[test]
   pub fn test_001() {
