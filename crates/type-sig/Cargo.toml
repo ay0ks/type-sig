@@ -1,0 +1,10 @@
+[package]
+name = "type-sig"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license-file.workspace = true
+
+[dependencies]
+type-sig-proc-macro = { path = "../type-sig-proc-macro" }
+type-sig-type = { path = "../type-sig-type" }

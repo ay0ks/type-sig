@@ -1,0 +1,8 @@
+[package]
+name = "type-sig-type"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license-file.workspace = true
+
+[dependencies]

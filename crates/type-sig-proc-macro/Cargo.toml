@@ -1,0 +1,15 @@
+[package]
+name = "type-sig-proc-macro"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license-file.workspace = true
+
+[dependencies]
+type-sig-type = { path = "../type-sig-type" }
+quote = "1.0"
+syn = { version = "2.0", features = ["full"] }
+proc-macro2 = "1.0.92"
+
+[lib]
+proc-macro = true
