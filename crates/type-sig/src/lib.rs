@@ -1,4 +1,4 @@
-use type_sig_type::TypeSignature;
+pub use type_sig_type::TypeSignature;
 use type_sig_proc_macro::type_sig;
 
 pub fn type_sig<T: 'static>() -> TypeSignature {
@@ -9,7 +9,7 @@ pub fn type_sig<T: 'static>() -> TypeSignature {
 mod tests {
   use type_sig_type::TypeSignature;
 
-use super::type_sig;
+  use super::type_sig;
 
   #[test]
   pub fn test_001() {
