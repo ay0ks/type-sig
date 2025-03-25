@@ -1,5 +1,6 @@
 [![Crates.io Version](https://img.shields.io/crates/v/type-sig)](https://crates.io/crates/type-sig) [![docs.rs](https://img.shields.io/docsrs/type-sig)](https://docs.rs/type-sig/)
-This crate allows you to get a recursive type signature of a provided type.
+
+This crate allows you to get a recursive type signature of the provided type.
 
 Example:
 ```rs
